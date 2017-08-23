@@ -30,3 +30,35 @@ document.write(mao2[1]);
 document.write(mao2[2]);
 
 console.log(mao);
+
+// codigao
+let numeros = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12];
+let nipes = ['copas', 'ouro', 'paus', 'espada'];
+var ponto1 = ponto2 = 0;
+var pontos = 30;
+var bt = document.querySelector('#iniciar');
+var maott = [];
+var backup = "";
+
+var sorteia = ()=> ""+numeros[Math.floor(Math.random()*numeros.length)] + nipes[Math.floor(Math.random()*nipes.length)];
+
+var distribuir = function  (){
+    for(var i = 0; i < 3; i++){
+      let carta = sorteia();
+      if(backup.indexOf(carta) == -1)maott+=(","+carta);
+    }
+    backup+=maott;
+    return maott;
+}
+
+var mao1 = backup = distribuir();
+var mao2 = backup = distribuir();
+
+document.write(mao1[0]);
+document.write(mao1[1]);
+document.write(mao1[2]);
+document.write(mao2[0]);
+document.write(mao2[1]);
+document.write(mao2[2]);
+
+console.log(backup);
